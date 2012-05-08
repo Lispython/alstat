@@ -89,7 +89,7 @@ class run_audit(Command):
 setup(
     name="alstat",
     version=".".join(map(str, __version__)),
-    description="Advanced tools to analyze logs",
+    description="Collection of advanced utils to parse logfiles in different formats and build statistic reports",
     long_description=readme_content,
     author="Alex Lispython",
     author_email="alex@obout.ru",
