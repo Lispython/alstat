@@ -15,7 +15,7 @@ Usage
 -----
 
 This commant print all lines from all log files in directory /var/log/nginx
-if format `http_method status http_referer`
+if format `http_method status http_referer`::
 
     alstat -d /var/log/nginx/ -p "*access*" -f "base" http_method status http_referer
 
@@ -25,7 +25,7 @@ if format `http_method status http_referer`
     PUT 200 http://yandex.com/
 
 
-You can view fields list that you can use to display:
+You can view fields list that you can use to display::
 
     alstat -d /var/log/nginx/ -p "*access*" -l
 
