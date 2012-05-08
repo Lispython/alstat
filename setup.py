@@ -70,7 +70,7 @@ class run_audit(Command):
             print "Audit requires PyFlakes installed in your system."""
             sys.exit(-1)
 
-        dirs = ['alstats']
+        dirs = ['alstat']
         # Add example directories
         for dir in []:
             dirs.append(os.path.join('examples', dir))
@@ -87,7 +87,7 @@ class run_audit(Command):
 
 
 setup(
-    name="alstats",
+    name="alstat",
     version=".".join(map(str, __version__)),
     description="Advanced tools to analyze logs",
     long_description=readme_content,
