@@ -1,6 +1,6 @@
 include *.txt *.md *.rst Makefile
 recursive-include alstat *.py
-recursive-include tests *.py
+recursive-include tests *.py *.log
 recursive-include docs *.txt *.py *.rst *.md
 recursive-include docs *
 recursive-exclude docs *.pyc

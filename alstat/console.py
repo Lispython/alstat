@@ -15,13 +15,11 @@ import time
 import logging
 import sys
 
-from alstat import get_version
-from alstat.parsers import NginxParser
-
 logger = logging.getLogger('alstat')
 
-
 def main():
+    from alstat import get_version
+    from alstat.parsers import NginxParser
     t = time.time()
 
     from optparse import OptionParser
