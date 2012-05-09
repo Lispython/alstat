@@ -36,11 +36,16 @@ def main():
                       help="Can be nginx|base", default="nginx")
     parser.add_option("-l", action="store_true", dest="fields_list", help="Show list of available fields")
     parser.add_option("-v", action="store_true", dest="verbose", help="Verbose mode")
+    parser.add_option("-V", "--version", action="store_true", dest="version", help="Print version")
 
     (options, args) = parser.parse_args()
 
+    if options.version:
+        print("Alstat version {version}".format(version=get_version()))
+        sys.exit(1)
+
     if options.verbose:
-        print("Alstat v%s start at %s" % (get_version(), time.ctime(t)))
+        print("Alstat v{version} start at {time}".format(version=get_version(), time=time.ctime(t)))
 
     if options.fields_list:
         print("You can use fieldnames: " + ", ".join(NginxParser.PATTERNS_MAP.keys()))
@@ -60,6 +65,6 @@ def main():
         print(" ".join([v for k, v in x.iteritems() if k in args]))
 
     if options.verbose:
-        print("Analyze completed %s sec at %s " % ((time.time()-t) * 10, time.ctime()))
+        print("Analyze completed {time_duration} sec at {time} ".fortam(time_duration=(time.time()-t) * 10, time=time.ctime()))
     sys.exit(1)
 
