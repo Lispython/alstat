@@ -14,8 +14,9 @@ import unittest
 import os
 import re
 from collections import defaultdict
+from itertools import chain
 
-from alstat.utils import find_files, concatenator, open_files, parse_line
+from alstat.utils import find_files, open_files, parse_line
 from alstat.parsers import BaseParser, NginxParser
 
 
@@ -40,7 +41,7 @@ class UtilsTestCase(unittest.TestCase):
 
     def test_parser(self):
         files = open_files(find_files("access.nginx.*", self.log_dir))
-        lines = concatenator(files)
+        lines = chain(*files)
 
         for x in parse_line(lambda x: x[:20], lines):
             self.assertEquals(len(x), 20)

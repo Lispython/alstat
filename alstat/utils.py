@@ -46,17 +46,6 @@ def find_files(file_pattern, top):
             yield os.path.join(path, name)
 
 
-def concatenator(sources):
-    """Concatenate multiple generators into a single sequence
-
-    Attributes:
-    - `sources` - list of iterable sources
-    """
-    for source in sources:
-        for item in source:
-            yield item
-
-
 def grep(pattern, lines):
     """Grep a sequence of lines that match a re pattern
 
