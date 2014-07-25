@@ -65,6 +65,6 @@ def main():
         print(" ".join([v for k, v in x.iteritems() if k in args]))
 
     if options.verbose:
-        print("Analyze completed {time_duration} sec at {time} ".fortam(time_duration=(time.time()-t) * 10, time=time.ctime()))
+        print("Analyze completed {time_duration} sec at {time} ".format(time_duration=(time.time()-t) * 10, time=time.ctime()))
     sys.exit(1)
 
